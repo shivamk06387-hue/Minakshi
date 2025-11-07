@@ -17,7 +17,6 @@
       flex-direction: column;
     }
 
-    /* Fullscreen Image */
     .bg-image {
       width: 100%;
       height: 100%;
@@ -30,7 +29,6 @@
       z-index: 1;
     }
 
-    /* Next Button */
     .next-btn {
       position: absolute;
       bottom: 20px;
@@ -47,12 +45,12 @@
       transition: 0.3s;
       z-index: 2;
     }
+
     .next-btn:hover {
       background: #ff77ff;
       transform: translateX(-50%) scale(1.1);
     }
 
-    /* Hidden video for audio only */
     #bgVideo {
       display: none;
     }
@@ -60,19 +58,19 @@
 </head>
 <body>
 
-  <!-- Background Image -->
+  <!-- background image -->
   <img class="bg-image" src="../Minakshi/90.jpg" alt="Minakshi Photo">
 
-  <!-- Background Audio from MP4 -->
+  <!-- hidden video (for audio only) -->
   <video id="bgVideo" src="../Minakshi/15.mp4" loop></video>
 
-  <!-- Next Button -->
+  <!-- next button -->
   <button class="next-btn" onclick="window.location.href='12345678.html'">Next 💖</button>
 
   <script>
     const video = document.getElementById('bgVideo');
 
-    // Play MP4 audio on first user interaction
+    // click karte hi audio play hoga
     document.body.addEventListener('click', () => {
       video.play();
     }, { once: true });
@@ -80,4 +78,3 @@
 
 </body>
 </html>
-
