@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Message for Minakshi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(45deg, #ff0077, #8000ff, #ff77ff);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .message-container {
+      background: rgba(0,0,0,0.5);
+      padding: 20px 30px;
+      border-radius: 15px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+      white-space: pre-line;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    .message-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .message-container::-webkit-scrollbar-thumb {
+      background-color: #ff77ff;
+      border-radius: 4px;
+    }
+    .message-container::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+    }
+
+    /* Tap to play overlay - centered and on top */
+    #tapMsg {
+      position: fixed; /* fixed ensures it stays in middle of screen */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ff77ff;
+      font-size: 1.8em;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 0 0 15px #ff00cc;
+      z-index: 999; /* super on top */
+      text-align: center;
+      pointer-events: none; /* lets clicks pass through until removed */
+    }
+
+    /* Hidden video for audio */
+    #bgVideo {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎨 Message Container -->
+  <div class="message-container">
+    <h1>💖 For Only You 💖 </h1>
+    <p>
+🌸 I may never 💭 be able ✨ to tell you this 💌  
+But, 💞 I love ❤ your existence 🌍  
+Not just 💋 your smile 😊,  
+Not just 🎶 your voice 🎤,  
+I love 💕 everything 🌈 in you 🌹
+
+When no one’s 👀 watching 🌙  
+The quiet 🌼 way you care 💗,  
+The strength 💪 in your softness 🌷,  
+The chaos 🌪 in your mind 💭  
+Still, I always 💫 choose to love ❤ you 💞  
+
+You don’t even realise 😔 how much 🥺 you mean 💕 to me 🌎  
+You’re not just 🌠 a person 👩‍🦰  
+You are peace 🤍🕊  
+You are dream 🌙✨  
+You are poetry 🖋🌹  
+You are the reason 💖 someone like me 💫 still believes 🙏 in LOVE 💕  
+
+Hope!!! 🌟 I could tell 💬 you how important 💖 you are to me 🥰  
+You are special 🌸❤
+    </p>
+  </div>
+
+
+
+  <!-- 💌 Tap to play overlay -->
+  <div id="tapMsg"></div>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+    const tapMsg = document.getElementById('tapMsg');
+
+    document.body.addEventListener('click', () => {
+      video.play();
+      tapMsg.style.display = 'none';
+    }, { once: true });
+  </script>
+
+</body>
+</html>

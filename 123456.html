@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💞 Next Video 💞</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 0, 150, 0.7);
+    }
+
+    /* Next Button - Center Bottom */
+    .next-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 28px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      border: none;
+      background: #ff4ecf;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 180, 0.7);
+      transition: 0.3s;
+      z-index: 2;
+    }
+    .next-btn:hover {
+      background: #ff77ff;
+      transform: translateX(-50%) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎥 Your video -->
+  <video src="../Minakshi/14.mp4" autoplay loop controls></video>
+
+  <!-- 💞 Next button -->
+  <button class="next-btn" onclick="window.location.href='thirdvideo.html'">Next 💞</button>
+
+</body>
+</html>

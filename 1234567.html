@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💞 Third Photo 💞</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      flex-direction: column;
+    }
+
+    /* Fullscreen Image */
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 0, 150, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Next Button */
+    .next-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 28px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      border: none;
+      background: #ff4ecf;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 180, 0.7);
+      transition: 0.3s;
+      z-index: 2;
+    }
+    .next-btn:hover {
+      background: #ff77ff;
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    /* Hidden video for audio only */
+    #bgVideo {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Image -->
+  <img class="bg-image" src="../Minakshi/90.jpg" alt="Minakshi Photo">
+
+  <!-- Background Audio from MP4 -->
+  <video id="bgVideo" src="../Minakshi/15.mp4" loop></video>
+
+  <!-- Next Button -->
+  <button class="next-btn" onclick="window.location.href='minakshimessage.html'">Next 💖</button>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+
+    // Play MP4 audio on first user interaction
+    document.body.addEventListener('click', () => {
+      video.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
+

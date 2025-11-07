@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Minakshi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 0, 150, 0.7);
+      margin-bottom: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      bottom: -30px;
+      z-index: 2;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {top: -12px; left: 0;}
+    .heart::after {left: -12px; top: 0;}
+    @keyframes floatUp {
+      0% {transform: translateY(0) rotate(45deg) scale(1);}
+      100% {transform: translateY(-800px) rotate(45deg) scale(0);}
+    }
+
+    .next-btn {
+      display: none; /* initially hidden */
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      border: none;
+      background: #ff4ecf;
+      color: white;
+      cursor: pointer;
+      z-index: 3;
+    }
+    .next-btn:hover {
+      background: #ff77ff;
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minakshi's Photo -->
+  <img src="../Minakshi/13.jpg" alt="Minakshi">
+
+  <!-- Next Button -->
+  <button class="next-btn" id="nextBtn" onclick="window.location.href='shuffle.html'">Next 💖</button>
+
+  <!-- Background Audio -->
+  <audio id="minakshiAudio" src="../Minakshi/11.mp4" autoplay></audio>
+
+  <script>
+    const audio = document.getElementById('minakshiAudio');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+
+    // Show Next button as soon as audio starts
+    audio.addEventListener('play', () => {
+      nextBtn.style.display = 'inline-block';
+    });
+
+    // If autoplay is blocked, wait for user click to start audio
+    document.body.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          nextBtn.style.display = 'inline-block';
+        });
+      } else {
+        audio.pause();
+      }
+    });
+
+    // Try autoplay immediately
+    audio.play().then(() => {
+      nextBtn.style.display = 'inline-block';
+    }).catch(() => console.log("Autoplay blocked, waiting for user interaction."));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Minakshi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(45deg, #3a003a, #ff0077, #8000ff);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 20px;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    .next-btn {
+      background: #ff4ecf;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: 0.3s;
+    }
+
+    .next-btn:hover {
+      background: #ff77ff;
+      transform: scale(1.1);
+    }
+
+    /* Floating hearts for background */
+    .heart {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      bottom: -30px;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {top: -12px; left: 0;}
+    .heart::after {left: -12px; top: 0;}
+
+    @keyframes floatUp {
+      0% {transform: translateY(0) rotate(45deg) scale(1);}
+      100% {transform: translateY(-800px) rotate(45deg) scale(0);}
+    }
+
+    /* Tenor embed styling */
+    .tenor-gif-embed {
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 💖 Tenor GIF Embed -->
+  <div class="tenor-gif-embed" data-postid="27373532" data-share-method="host" data-aspect-ratio="1" data-width="200px">
+    <a href="https://tenor.com/view/hey-gif-27373532">Hey GIF</a> from <a href="https://tenor.com/search/hey-gifs">Hey GIFs</a>
+  </div>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <h1> Kya Haal h Madam ji 🤭 </h1>
+
+  <button class="next-btn" onclick="window.location.href='flowers.html'">Next 💞</button>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
