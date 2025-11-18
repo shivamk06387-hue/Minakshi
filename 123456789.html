@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 For Minakshi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+      flex-direction: column;
+    }
+
+    /* Fullscreen video (thoda chhota) */
+    video {
+      width: 95%;           /* 👈 thoda chhota */
+      height: 95%;          /* 👈 thoda chhota */
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 0, 150, 0.7);
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Next Button */
+    .next-btn {
+      position: absolute;
+      bottom: 25px;
+      padding: 12px 28px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      border: none;
+      background: #ff4ecf;
+      color: white;
+      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 0 20px rgba(255, 0, 180, 0.7);
+      transition: 0.3s;
+    }
+
+    .next-btn:hover {
+      background: #ff77ff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video id="minakshiVideo" src="../Minakshi/16.mp4" autoplay loop controls playsinline></video>
+
+  <!-- Next Button -->
+  <button class="next-btn" onclick="window.location.href='123456.html'">Next 💖</button>
+
+</body>
+</html>
